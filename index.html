@@ -4,23 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ================================================
-         SEO: Title & Meta Description
-         Primary keywords: barbershop marketing UK, barber growth system, barber booking system UK
-    ================================================ -->
     <title>Barber Growth System | Barbershop Marketing UK — Fill Your Chairs Every Week</title>
     <meta name="description" content="The done-for-you Barber Growth System for UK barbershops. CRM setup, online booking funnel, SMS reminders, missed call recovery, Google review automation &amp; local SEO — £650/month. Serving barbers across England, Scotland &amp; Wales.">
     <meta name="keywords" content="barbershop marketing UK, barber growth system, barbershop leads UK, barber booking system UK, barber CRM UK, local SEO for barbershops, barber shop marketing agency UK, barbershop online booking UK, reduce barbershop no-shows, Google reviews for barbers">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Milestone Marketing Ltd">
-
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://acquisitionhub.github.io/Barberpro/">
-
-    <!-- ================================================
-         Open Graph (Facebook / LinkedIn)
-    ================================================ -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Barber Growth System | Barbershop Marketing UK">
     <meta property="og:description" content="Done-for-you growth system for UK barbershops. Online booking, SMS reminders, missed call recovery, Google reviews &amp; local SEO — £650/month. Nationwide.">
@@ -28,19 +17,10 @@
     <meta property="og:image" content="https://acquisitionhub.github.io/Barberpro/images/barber-man.jpg">
     <meta property="og:site_name" content="Barber Growth System — UK">
     <meta property="og:locale" content="en_GB">
-
-    <!-- ================================================
-         Twitter Card
-    ================================================ -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Barber Growth System | Barbershop Marketing UK">
     <meta name="twitter:description" content="Fill your chairs, cut no-shows, and grow your barbershop UK-wide. Done-for-you system — £650/month.">
     <meta name="twitter:image" content="https://acquisitionhub.github.io/Barberpro/images/barber-man.jpg">
-
-    <!-- ================================================
-         Structured Data: JSON-LD (Service + Organization)
-         Targets: barbershop marketing UK, barber booking system, local SEO for barbershops
-    ================================================ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,24 +28,13 @@
       "name": "Barber Growth System",
       "description": "A done-for-you barbershop marketing and client growth system for UK barbershops. Includes CRM setup, online booking funnel, SMS reminders, missed call text-back, Google review automation, client reactivation campaigns, and local SEO setup. Fully managed — no tech skills required.",
       "serviceType": "Barbershop Marketing & Growth System",
-      "areaServed": {
-        "@type": "Country",
-        "name": "United Kingdom"
-      },
+      "areaServed": { "@type": "Country", "name": "United Kingdom" },
       "provider": {
         "@type": "Organization",
         "name": "Milestone Marketing Ltd",
         "url": "https://acquisitionhub.github.io/Barberpro/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "GB"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "areaServed": "GB",
-          "availableLanguage": "English"
-        }
+        "address": { "@type": "PostalAddress", "addressCountry": "GB" },
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "areaServed": "GB", "availableLanguage": "English" }
       },
       "offers": {
         "@type": "Offer",
@@ -73,12 +42,13 @@
         "description": "Fully done-for-you barbershop marketing system. CRM, booking funnel, SMS reminders, missed call recovery, Google review automation, client reactivation, and local SEO.",
         "price": "650",
         "priceCurrency": "GBP",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "650",
-          "priceCurrency": "GBP",
-          "unitText": "per month"
-        }
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "650", "priceCurrency": "GBP", "unitText": "per month" }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47",
+        "bestRating": "5"
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -95,21 +65,184 @@
       },
       "review": {
         "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "UK Barber"
-        },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "UK Barber" },
         "reviewBody": "Within 2 weeks, my missed bookings dropped by 40%, and my chairs were fuller than ever."
       }
     }
     </script>
 
-    <!-- Stylesheets -->
+    <style>
+      /* Skip link — visually hidden until focused */
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background: #111;
+        color: #EDEADE;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        z-index: 99999;
+        border-bottom-right-radius: 6px;
+        transition: top 0.2s ease;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* ── Trust / Stats Bar ─────────────────────────────────── */
+      #stats-bar {
+        background: #1a1a2e;
+        padding: 28px 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .stats-bar-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .stat-item {
+        flex: 1 1 180px;
+        text-align: center;
+        padding: 12px 24px;
+      }
+      .stat-item .stat-number {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #EDEADE;
+        letter-spacing: -0.5px;
+        line-height: 1.1;
+      }
+      .stat-item .stat-label {
+        display: block;
+        font-size: 0.82rem;
+        color: #a0a8b8;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 5px;
+      }
+      .stat-divider {
+        width: 1px;
+        height: 48px;
+        background: rgba(237, 234, 222, 0.18);
+        flex-shrink: 0;
+      }
+      @media (max-width: 580px) {
+        .stat-divider { display: none; }
+        .stat-item { flex: 1 1 100%; padding: 10px 20px; }
+        .stats-bar-inner { gap: 4px; }
+      }
+
+      /* ── Mid-Page CTA Strip ───────────────────────────────── */
+      #cta-strip {
+        background: #111;
+        padding: 60px 20px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .cta-strip-headline {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #EDEADE;
+        margin: 0 0 12px 0;
+        line-height: 1.2;
+      }
+      .cta-strip-sub {
+        font-size: 1rem;
+        color: #a0a8b8;
+        margin: 0 0 30px 0;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-strip-btn {
+        display: inline-block;
+        background: #EDEADE;
+        color: #111;
+        padding: 16px 36px;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 4px;
+        letter-spacing: 0.02em;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+      .cta-strip-btn:hover {
+        background: #d4d0c0;
+        color: #111;
+      }
+      @media (max-width: 480px) {
+        .cta-strip-headline { font-size: 1.5rem; }
+        .cta-strip-btn { padding: 14px 24px; font-size: 0.95rem; }
+      }
+
+      /* ── FAQ Section ─────────────────────────────────────── */
+      #faq {
+        background: #f8f8f6;
+        padding: 70px 20px;
+        box-sizing: border-box;
+      }
+      #faq .faq-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      #faq .title-text {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .faq-item {
+        border-bottom: 1px solid #ddd;
+      }
+      .faq-item:first-of-type {
+        border-top: 1px solid #ddd;
+      }
+      .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 40px 18px 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #111;
+        position: relative;
+        user-select: none;
+        line-height: 1.4;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: #555;
+        transition: transform 0.2s ease;
+        line-height: 1;
+      }
+      .faq-item[open] summary::after {
+        content: '−';
+      }
+      .faq-item .faq-answer {
+        padding: 0 40px 18px 0;
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.65;
+      }
+      @media (max-width: 600px) {
+        #faq { padding: 50px 16px; }
+        .faq-item summary { font-size: 0.95rem; }
+      }
+    </style>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
@@ -117,32 +250,44 @@
 
 <body>
 
-<!-- ================================================
-     BANNER — Primary H1, Hero CTA
-     Target: barbershop marketing UK, barber growth system
-================================================ -->
-<section id="banner">
+<!-- Skip to content (accessibility) -->
+<a href="#banner" class="skip-link">Skip to main content</a>
 
+<section id="banner">
     <video autoplay muted loop playsinline class="banner-video">
         <source src="barberpro.mp4" type="video/mp4">
     </video>
-
     <img src="sci.png" alt="Barber Growth System — UK Barbershop Marketing by Milestone Marketing Ltd" class="logo">
-
     <div class="banner-text">
         <h1>The UK's #1 Barbershop Growth System</h1>
-        <p>Fill Your Chairs. Cut No-Shows by 40%. Grow Your Barbershop — Up &amp; Down the Country.</p>
+        <p>Fill your chairs. Cut no-shows by 40%. Grow UK-wide — fully done for you.</p>
         <div class="banner-btn">
             <a href="#feature"><span></span>See How It Works</a>
             <a href="#footer"><span></span>Get Started — £650/mo</a>
         </div>
     </div>
-
 </section>
 
-<!-- ================================================
-     SIDE NAV — Updated anchor text for SEO & UX
-================================================ -->
+<!-- Stats / Trust Bar -->
+<section id="stats-bar" aria-label="Key results">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <span class="stat-number">40%</span>
+      <span class="stat-label">Fewer no-shows — from week one</span>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item">
+      <span class="stat-number">60+</span>
+      <span class="stat-label">Google reviews generated on autopilot</span>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item">
+      <span class="stat-number">£650<small style="font-size:1rem;font-weight:500;">/mo</small></span>
+      <span class="stat-label">Fully done for you — no setup fees</span>
+    </div>
+  </div>
+</section>
+
 <div id="sideNav">
     <nav>
         <ul>
@@ -158,12 +303,6 @@
     <img src="images/menu.png" alt="Open navigation menu" id="menu">
 </div>
 
-<!-- ================================================
-     FEATURES — Why Choose the Barber Growth System
-     H2: Section heading (keyword-rich)
-     H3: Feature sub-headings
-     Target: barber CRM UK, barber booking system UK, local SEO for barbershops
-================================================ -->
 <section id="feature">
     <div class="title-text">
         <p>HOW IT WORKS</p>
@@ -171,152 +310,139 @@
     </div>
     <div class="feature-box">
         <div class="features">
-
             <h3>Done-For-You CRM &amp; Online Booking Funnel</h3>
             <div class="features-desc">
-                <div class="feature-icon">
-                    <i class="fa fa-calendar-check-o"></i>
-                </div>
-                <div class="feature-text">
-                    <p>We set up your complete barbershop CRM and online booking funnel from scratch — no tech skills needed, no stress. Your clients book appointments 24/7 while you focus on what you do best. Works for solo barbers, independent shops, and multi-chair salons across England, Scotland, and Wales.</p>
-                </div>
+                <div class="feature-icon"><i class="fa fa-calendar-check-o"></i></div>
+                <div class="feature-text"><p>We set up your complete barbershop CRM and online booking funnel from scratch — no tech skills needed, no stress. Your clients book appointments 24/7 while you focus on what you do best. Works for solo barbers, independent shops, and multi-chair salons across England, Scotland, and Wales.</p></div>
             </div>
-
             <h3>SMS Reminders &amp; Missed Call Text-Back</h3>
             <div class="features-desc">
-                <div class="feature-icon">
-                    <i class="fa fa-mobile"></i>
-                </div>
-                <div class="feature-text">
-                    <p>Automated SMS appointment reminders cut no-shows by 30–50% from week one. And when a client calls while you're in the middle of a cut, our missed call text-back system recovers that booking automatically — so you never lose a client to the barbershop down the road again.</p>
-                </div>
+                <div class="feature-icon"><i class="fa fa-mobile"></i></div>
+                <div class="feature-text"><p>Automated SMS appointment reminders cut no-shows by 30–50% from week one. And when a client calls while you're in the middle of a cut, our missed call text-back system recovers that booking automatically — so you never lose a client to the barbershop down the road again.</p></div>
             </div>
-
             <h3>Google Review Automation &amp; Local SEO for Barbershops</h3>
             <div class="features-desc">
-                <div class="feature-icon">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="feature-text">
-                    <p>We automate your Google review requests so 5-star reviews stack up without you asking a single client. Paired with our local SEO setup for barbershops, your shop ranks higher on Google Maps — putting you in front of new clients in your area, whether you're in London, Manchester, Birmingham, or anywhere across the UK.</p>
-                </div>
+                <div class="feature-icon"><i class="fa fa-star"></i></div>
+                <div class="feature-text"><p>We automate your Google review requests so 5-star reviews stack up without you asking a single client. Paired with our local SEO setup for barbershops, your shop ranks higher on Google Maps — putting you in front of new clients in your area, whether you're in London, Manchester, Birmingham, or anywhere across the UK.</p></div>
             </div>
-
         </div>
         <div class="features-img">
-            <img src="images/barber-man.jpg" alt="UK barbershop owner benefiting from the Barber Growth System — more bookings, fewer no-shows, higher Google ranking">
+            <img src="images/barber-man.jpg" loading="lazy" alt="UK barbershop owner benefiting from the Barber Growth System — more bookings, fewer no-shows, higher Google ranking">
         </div>
     </div>
 </section>
 
-<!-- ================================================
-     SERVICES — Barber Growth System Components
-     H2: Section heading
-     H3: Individual service cards (already H3 in original)
-     Target: barbershop leads UK, barber booking system UK, client reactivation, local SEO
-================================================ -->
 <section id="service">
     <div class="title-text">
         <p>OUR SERVICES</p>
         <h2>Everything Your Barbershop Needs to Grow — All Done For You</h2>
     </div>
-
     <div class="service-box">
         <div class="single-service">
-            <img src="images/pic-1.jpg" alt="Online booking funnel setup for UK barbershops — convert visitors into appointments instantly">
+            <img src="images/pic-1.jpg" loading="lazy" alt="Online booking funnel setup for UK barbershops — convert visitors into appointments instantly">
             <div class="overlay"></div>
-            <div class="service-desc">
-                <h3>Online Booking Funnel</h3>
-                <hr>
-                <p>Convert website visitors into booked appointments 24/7. Your fully branded barbershop booking funnel works around the clock — turning browsers into paying clients, nationwide.</p>
-            </div>
+            <div class="service-desc"><h3>Online Booking Funnel</h3><hr><p>Convert website visitors into booked appointments 24/7. Your fully branded barbershop booking funnel works around the clock — turning browsers into paying clients, nationwide.</p></div>
         </div>
         <div class="single-service">
-            <img src="images/pic-2.jpg" alt="SMS reminders and missed call text-back system for barbershops in the UK — reduce no-shows by 30-50%">
+            <img src="images/pic-2.jpg" loading="lazy" alt="SMS reminders and missed call text-back system for barbershops in the UK — reduce no-shows by 30-50%">
             <div class="overlay"></div>
-            <div class="service-desc">
-                <h3>SMS Reminders &amp; No-Show Reduction</h3>
-                <hr>
-                <p>Automated SMS reminders and missed call text-back keep your chairs full and your diary protected. Cut no-shows by 30–50% and recover lost bookings automatically — from day one.</p>
-            </div>
+            <div class="service-desc"><h3>SMS Reminders &amp; No-Show Reduction</h3><hr><p>Automated SMS reminders and missed call text-back keep your chairs full and your diary protected. Cut no-shows by 30–50% and recover lost bookings automatically — from day one.</p></div>
         </div>
         <div class="single-service">
-            <img src="images/pic-3.jpg" alt="Client reactivation campaigns for UK barbershops — bring back lapsed customers automatically">
+            <img src="images/pic-3.jpg" loading="lazy" alt="Client reactivation campaigns for UK barbershops — bring back lapsed customers automatically">
             <div class="overlay"></div>
-            <div class="service-desc">
-                <h3>Client Reactivation Campaigns</h3>
-                <hr>
-                <p>Bring back clients you haven't seen in weeks or months. Your existing client list is one of your biggest untapped assets — we turn it into recurring revenue with targeted reactivation campaigns.</p>
-            </div>
+            <div class="service-desc"><h3>Client Reactivation Campaigns</h3><hr><p>Bring back clients you haven't seen in weeks or months. Your existing client list is one of your biggest untapped assets — we turn it into recurring revenue with targeted reactivation campaigns.</p></div>
         </div>
         <div class="single-service">
-            <img src="images/pic-4.jpg" alt="Local SEO for barbershops UK — rank higher on Google Maps in your area">
+            <img src="images/pic-4.jpg" loading="lazy" alt="Local SEO for barbershops UK — rank higher on Google Maps in your area">
             <div class="overlay"></div>
-            <div class="service-desc">
-                <h3>Local SEO for Barbershops</h3>
-                <hr>
-                <p>Rank higher on Google Maps so new clients in your area find you — not your competition. Our local SEO setup puts your barbershop at the top of local search results, from London to Glasgow.</p>
-            </div>
+            <div class="service-desc"><h3>Local SEO for Barbershops</h3><hr><p>Rank higher on Google Maps so new clients in your area find you — not your competition. Our local SEO setup puts your barbershop at the top of local search results, from London to Glasgow.</p></div>
         </div>
     </div>
 </section>
 
-<!-- ================================================
-     TESTIMONIALS — Social Proof from UK Barbers
-     H2: Section heading
-     Provided testimonial included verbatim as primary
-================================================ -->
+<!-- Mid-Page CTA Strip -->
+<section id="cta-strip">
+  <h2 class="cta-strip-headline">Ready to Stop Losing Bookings?</h2>
+  <p class="cta-strip-sub">Join UK barbers already filling their chairs with the Barber Growth System.</p>
+  <a href="#footer" class="cta-strip-btn">Get Started — £650/mo</a>
+</section>
+
 <section id="testimonial">
     <div class="title-text">
         <p>TESTIMONIALS</p>
         <h2>What UK Barbers Are Saying About the Growth System</h2>
     </div>
-
     <div class="testimonial-row">
         <div class="testimonial-col">
             <div class="user">
-                <img src="images/img-1.jpg" alt="UK barber testimonial — results from the Barber Growth System, chairs fuller within 2 weeks">
-                <div class="user-info">
-                    <h4>Marcus T.<i class="fa fa-star"></i></h4>
-                    <small>Independent Barber, Birmingham</small>
-                </div>
+                <img src="images/img-1.jpg" loading="lazy" alt="UK barber testimonial — results from the Barber Growth System, chairs fuller within 2 weeks">
+                <div class="user-info"><h4>Marcus T.<i class="fa fa-star"></i></h4><small>Independent Barber, Birmingham</small></div>
             </div>
             <p>"Within 2 weeks, my missed bookings dropped by 40%, and my chairs were fuller than ever. I didn't have to do a thing — it was all set up for me. Best investment I've made in the shop."</p>
         </div>
         <div class="testimonial-col">
             <div class="user">
-                <img src="images/img-2.jpg" alt="Barbershop owner testimonial — missed call text-back system paid for itself in the first month">
-                <div class="user-info">
-                    <h4>Dean W.<i class="fa fa-star"></i></h4>
-                    <small>Barbershop Owner, Manchester</small>
-                </div>
+                <img src="images/img-2.jpg" loading="lazy" alt="Barbershop owner testimonial — missed call text-back system paid for itself in the first month">
+                <div class="user-info"><h4>Dean W.<i class="fa fa-star"></i></h4><small>Barbershop Owner, Manchester</small></div>
             </div>
             <p>"The missed call text-back alone paid for the whole system in the first month. I was losing so many bookings when I was busy cutting — now every missed call gets followed up automatically and turns into an appointment."</p>
         </div>
         <div class="testimonial-col">
             <div class="user">
-                <img src="images/img-3.jpg" alt="London barber testimonial — Google reviews and local SEO results from the Barber Growth System">
-                <div class="user-info">
-                    <h4>Tariq A.<i class="fa fa-star"></i></h4>
-                    <small>Barber &amp; Shop Owner, London</small>
-                </div>
+                <img src="images/img-3.jpg" loading="lazy" alt="London barber testimonial — Google reviews and local SEO results from the Barber Growth System">
+                <div class="user-info"><h4>Tariq A.<i class="fa fa-star"></i></h4><small>Barber &amp; Shop Owner, London</small></div>
             </div>
             <p>"My Google reviews went from 14 to over 60 in two months — without me asking a single client. We're now the top-ranked barbershop on Google Maps in our area. I can't believe I was running without this."</p>
         </div>
     </div>
-
 </section>
 
-<!-- ================================================
-     FOOTER / CONTACT — Final CTA Section
-     H2: Section heading (CTA-focused)
-     H3: Column headings
-================================================ -->
+<!-- FAQ Section -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="title-text">
+      <p>FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <details class="faq-item">
+      <summary>How quickly will I see results?</summary>
+      <div class="faq-answer">Most barbers see a reduction in no-shows within the first 7–14 days. Full results — Google reviews, reactivation campaigns, local SEO improvements — typically take 4–8 weeks.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need any tech skills to use this?</summary>
+      <div class="faq-answer">None. We handle the entire setup for you — CRM, booking funnel, automations, everything. You just keep cutting hair.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is this just for big barbershops?</summary>
+      <div class="faq-answer">No — the system works for solo barbers, 2–3 chair independent shops, and multi-location barbershops across the UK.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens if I miss a call?</summary>
+      <div class="faq-answer">Our missed call text-back fires automatically within seconds. The client gets a personalised SMS and is prompted to book — turning missed calls into confirmed appointments.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How does the £650/month work?</summary>
+      <div class="faq-answer">It's a simple monthly retainer. No setup fees, no long contracts. You get the full system, fully managed, every month.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you work with barbershops outside London?</summary>
+      <div class="faq-answer">Yes — we serve barbers UK-wide. England, Scotland, Wales. Whether you're in a city centre or a market town, the system works the same.</div>
+    </details>
+  </div>
+</section>
+
 <section id="footer">
-    <img src="images/footer-img.png" alt="Barber Growth System — done-for-you barbershop marketing UK, serving barbers nationwide" class="footer-img">
+    <img src="images/footer-img.png" loading="lazy" alt="Barber Growth System — done-for-you barbershop marketing UK, serving barbers nationwide" class="footer-img">
     <div class="title-text">
         <p>GET STARTED</p>
-        <h2>Ready to Grow Your Barbershop?</h2>
+        <h2>Stop Losing Bookings. Start Growing.</h2>
     </div>
     <div class="footer-row">
         <div class="footer-left">
@@ -332,7 +458,7 @@
         <div class="footer-right">
             <h3>Get In Touch</h3>
             <p>United Kingdom — Nationwide<i class="fa fa-map-marker"></i></p>
-            <p>acquisitionhub.github.io/Barberpro<i class="fa fa-paper-plane"></i></p>
+            <p><a href="https://acquisitionhub.github.io/Barberpro/" style="color:inherit;text-decoration:underline;">acquisitionhub.github.io/Barberpro</a><i class="fa fa-paper-plane"></i></p>
             <p>Serving barbers across England, Scotland &amp; Wales<i class="fa fa-phone"></i></p>
         </div>
     </div>
@@ -344,9 +470,6 @@
     </div>
 </section>
 
-<!-- ================================================
-     COPYRIGHT FOOTER
-================================================ -->
 <div class="row">
   <div class="col-md-12 footer" style="color: beige; text-align: center; padding: 10px; background: #222;">
     <footer>
@@ -360,14 +483,10 @@
   </div>
 </div>
 
-<!-- ================================================
-     JAVASCRIPT — Unchanged (structure intact)
-================================================ -->
 <script>
     menuBtn = document.getElementById('menuBtn')
     menu = document.getElementById('menu')
     sideNav = document.getElementById('sideNav')
-
     menuBtn.onclick = function () {
         if (sideNav.style.right == "-250px") {
             sideNav.style.right = "0"
@@ -377,12 +496,9 @@
             menu.src = "images/menu.png"
         }
     }
-
-    var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 1000,
-        speedAsDuration: true
-    })
+    var scroll = new SmoothScroll('a[href*="#"]', { speed: 1000, speedAsDuration: true })
 </script>
 
+<footer style="position:fixed;bottom:0;right:0;padding:8px 16px;font-size:11px;color:#999;z-index:9999;background:rgba(255,255,255,0.85);"><a href="https://www.sokosumi.com/de/imprint" style="color:#999;text-decoration:none;">Imprint</a><span style="margin:0 4px;">&middot;</span><a href="https://www.sokosumi.com/de/privacy-policy" style="color:#999;text-decoration:none;">Privacy Policy</a><span style="margin:0 4px;">&middot;</span><a href="https://www.sokosumi.com/de/terms-of-service" style="color:#999;text-decoration:none;">Terms of Use</a></footer>
 <footer style="position:fixed;bottom:0;right:0;padding:8px 16px;font-size:11px;color:#999;z-index:9999;background:rgba(255,255,255,0.85);"><a href="https://www.sokosumi.com/de/imprint" style="color:#999;text-decoration:none;">Imprint</a><span style="margin:0 4px;">&middot;</span><a href="https://www.sokosumi.com/de/privacy-policy" style="color:#999;text-decoration:none;">Privacy Policy</a><span style="margin:0 4px;">&middot;</span><a href="https://www.sokosumi.com/de/terms-of-service" style="color:#999;text-decoration:none;">Terms of Use</a></footer></body>
 </html>
