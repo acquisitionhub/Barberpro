@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Barber Growth System | Barbershop Marketing UK</title>
+
+<meta name="description" content="The done-for-you Barber Growth System for UK barbershops.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Milestone Marketing Ltd">
+
+<link rel="canonical" href="https://acquisitionhub.github.io/Barberpro/">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+
+<body>
+
+<!-- YOUR PAGE CONTENT STARTS HERE -->
+
+<section id="banner">
+    <video autoplay muted loop playsinline class="banner-video">
+        <source src="barberpro.mp4" type="video/mp4">
+    </video>
+
+    <div class="gradient-overlay"></div>
+
+    <img src="sci.png" alt="Barber Growth System logo" class="logo">
+
+    <div class="banner-text">
+        <h1>The UK's #1 Barbershop Growth System</h1>
+        <p>Fill Your Chairs. Cut No-Shows. Grow Your Barbershop.</p>
+
+        <div class="banner-btn">
+            <a href="#feature"><span></span>See How It Works</a>
+            <a href="#footer"><span></span>Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!-- rest of your sections stay here -->
+
+<script>
+menuBtn = document.getElementById('menuBtn')
+menu = document.getElementById('menu')
+sideNav = document.getElementById('sideNav')
+
+menuBtn.onclick = function () {
+    if (sideNav.style.right == "-250px") {
+        sideNav.style.right = "0"
+        menu.src = "images/close.png"
+    } else {
+        sideNav.style.right = "-250px"
+        menu.src = "images/menu.png"
+    }
+}
+
+var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000,
+    speedAsDuration: true
+})
+</script>
+
+</body>
+</html>
