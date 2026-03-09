@@ -1,0 +1,701 @@
+/* ============================================================
+   BARBER GROWTH SYSTEM — style.css
+   Milestone Marketing Ltd | acquisitionhub.github.io/Barberpro
+   Accent colour: #EDEADE (warm cream)
+   Background: #111 / #1a1a1a / #222 (dark)
+   ============================================================ */
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #111;
+    color: #e0e0e0;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================
+   TYPOGRAPHY HELPERS
+   ============================================================ */
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+/* ============================================================
+   SECTION TITLE (reused across all sections)
+   .title-text > p (label) + h2 (heading)
+   ============================================================ */
+
+.title-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title-text p {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #EDEADE;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.title-text h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   BANNER — Full-screen hero with video background
+   ============================================================ */
+
+#banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video background */
+.banner-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark overlay over video */
+#banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.60);
+    z-index: 1;
+}
+
+/* Logo — top left */
+.logo {
+    position: absolute;
+    top: 22px;
+    left: 30px;
+    width: 120px;
+    z-index: 3;
+}
+
+/* Hero text block */
+.banner-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 820px;
+}
+
+.banner-text h1 {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    color: #fff;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+.banner-text > p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #EDEADE;
+    margin-bottom: 36px;
+    font-weight: 400;
+}
+
+/* CTA Buttons */
+.banner-btn {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.banner-btn a {
+    position: relative;
+    display: inline-block;
+    padding: 14px 34px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 2px solid #EDEADE;
+    overflow: hidden;
+    transition: color 0.35s ease, background 0.35s ease;
+}
+
+.banner-btn a span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #EDEADE;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.55s ease, height 0.55s ease;
+    z-index: 0;
+}
+
+.banner-btn a:hover span {
+    width: 300px;
+    height: 300px;
+}
+
+.banner-btn a:hover {
+    color: #111;
+}
+
+.banner-btn a:last-child {
+    background: #EDEADE;
+    color: #111;
+}
+
+.banner-btn a:last-child:hover {
+    background: transparent;
+    color: #fff;
+}
+
+/* ============================================================
+   SIDE NAV
+   ============================================================ */
+
+#sideNav {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #1a1a1a;
+    z-index: 1000;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+}
+
+#sideNav nav {
+    padding-top: 80px;
+}
+
+#sideNav nav ul {
+    list-style: none;
+}
+
+#sideNav nav ul li {
+    border-bottom: 1px solid #2a2a2a;
+}
+
+#sideNav nav ul li a {
+    display: block;
+    padding: 16px 30px;
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+#sideNav nav ul li a:hover {
+    color: #EDEADE;
+    padding-left: 40px;
+}
+
+/* Menu toggle button */
+#menuBtn {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 1001;
+    cursor: pointer;
+    width: 36px;
+}
+
+#menuBtn img {
+    width: 100%;
+    filter: invert(1);
+}
+
+/* ============================================================
+   FEATURES SECTION
+   ============================================================ */
+
+#feature {
+    background: #141414;
+    padding: 90px 5%;
+}
+
+.feature-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Left column: feature list */
+.features {
+    flex: 1;
+}
+
+.features h3 {
+    font-size: 1.1rem;
+    color: #EDEADE;
+    margin-bottom: 12px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.features h3:first-child {
+    margin-top: 0;
+}
+
+.features-desc {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    background: #EDEADE;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon i {
+    font-size: 1.3rem;
+    color: #111;
+}
+
+.feature-text p {
+    font-size: 0.95rem;
+    color: #bbb;
+    line-height: 1.7;
+}
+
+/* Right column: image */
+.features-img {
+    flex: 0 0 40%;
+    max-width: 420px;
+}
+
+.features-img img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    height: 480px;
+    filter: brightness(0.85);
+}
+
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
+
+#service {
+    background: #111;
+    padding: 90px 5%;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.single-service {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.single-service img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.single-service:hover img {
+    transform: scale(1.06);
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.2) 100%);
+    z-index: 1;
+}
+
+/* Service text — always visible at bottom */
+.service-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 20px;
+    z-index: 2;
+    transform: translateY(60px);
+    transition: transform 0.4s ease;
+}
+
+.single-service:hover .service-desc {
+    transform: translateY(0);
+}
+
+.service-desc h3 {
+    font-size: 1rem;
+    color: #EDEADE;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-desc hr {
+    border: none;
+    border-top: 1px solid #EDEADE;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.service-desc p {
+    font-size: 0.85rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   TESTIMONIALS SECTION
+   ============================================================ */
+
+#testimonial {
+    background: #141414;
+    padding: 90px 5%;
+}
+
+.testimonial-row {
+    display: flex;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.testimonial-col {
+    flex: 1;
+    min-width: 260px;
+    background: #1e1e1e;
+    border-left: 3px solid #EDEADE;
+    padding: 28px 24px;
+    border-radius: 4px;
+}
+
+.testimonial-col > p {
+    font-size: 0.92rem;
+    color: #bbb;
+    line-height: 1.75;
+    font-style: italic;
+    margin-top: 18px;
+}
+
+/* User row inside testimonial */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #EDEADE;
+    flex-shrink: 0;
+}
+
+.user-info h4 {
+    font-size: 0.95rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-info h4 i {
+    color: #EDEADE;
+    font-size: 0.85rem;
+}
+
+.user-info small {
+    font-size: 0.78rem;
+    color: #888;
+}
+
+/* ============================================================
+   FOOTER / CTA SECTION
+   ============================================================ */
+
+#footer {
+    background: #111;
+    padding: 90px 5% 60px;
+    position: relative;
+}
+
+/* Decorative footer image — full width, above content */
+.footer-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    margin-bottom: 60px;
+    border-radius: 4px;
+    filter: brightness(0.6);
+}
+
+.footer-row {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+    min-width: 260px;
+}
+
+.footer-left h3,
+.footer-right h3 {
+    font-size: 1.1rem;
+    color: #EDEADE;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-left p,
+.footer-right p {
+    font-size: 0.92rem;
+    color: #bbb;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-left p i,
+.footer-right p i {
+    color: #EDEADE;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Social links */
+.social-links {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    padding-top: 30px;
+    border-top: 1px solid #2a2a2a;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.social-links i {
+    font-size: 1.4rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-links i:hover {
+    color: #EDEADE;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   COPYRIGHT BAR
+   ============================================================ */
+
+.row {
+    width: 100%;
+}
+
+.row .footer {
+    color: beige;
+    text-align: center;
+    padding: 14px 20px;
+    background: #222;
+    font-size: 0.82rem;
+}
+
+.row .footer a {
+    color: beige;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.row .footer a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   FIXED LEGAL FOOTER (Sokosumi)
+   ============================================================ */
+
+body > footer[style] {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (≤ 900px)
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .feature-box {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .features-img {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .features-img img {
+        height: 300px;
+    }
+
+    .service-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-desc {
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (≤ 600px)
+   ============================================================ */
+
+@media (max-width: 600px) {
+    #banner {
+        min-height: 100svh;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-text > p {
+        font-size: 0.95rem;
+    }
+
+    .banner-btn {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-btn a {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    #feature,
+    #service,
+    #testimonial,
+    #footer {
+        padding: 60px 5%;
+    }
+
+    .service-box {
+        grid-template-columns: 1fr;
+    }
+
+    .single-service img {
+        height: 260px;
+    }
+
+    .testimonial-row {
+        flex-direction: column;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-img {
+        max-height: 180px;
+        margin-bottom: 40px;
+    }
+
+    .title-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        width: 90px;
+        top: 16px;
+        left: 16px;
+    }
+}
