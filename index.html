@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en-GB">
 
 <head>
@@ -72,14 +71,42 @@
     }
     </script>
 
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
-      /* Skip link — visually hidden until focused */
+      /* =====================================================
+         DESIGN SYSTEM — Premium Dark Theme
+         Palette: #0d0d0d / #111 / #1a1a2e | Accent: #EDEADE
+      ===================================================== */
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #111;
+        color: #c8c4b8;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Skip Link ── */
       .skip-link {
         position: absolute;
         top: -100%;
         left: 0;
-        background:;
-        color: ;
+        background: #EDEADE;
+        color: #111;
         padding: 10px 20px;
         font-size: 14px;
         font-weight: 600;
@@ -88,134 +115,661 @@
         border-bottom-right-radius: 6px;
         transition: top 0.2s ease;
       }
-      .skip-link:focus {
-        top: 0;
+      .skip-link:focus { top: 0; }
+
+      /* ── Section Title Component ── */
+      .title-text {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .title-text > p {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #EDEADE;
+        opacity: 0.6;
+        margin-bottom: 14px;
+      }
+      .title-text h2 {
+        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+        font-weight: 800;
+        color: #EDEADE;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        max-width: 620px;
+        margin: 0 auto;
       }
 
-      /* ── Trust / Stats Bar ─────────────────────────────────── */
+      /* =====================================================
+         BANNER — Full Viewport Hero
+      ===================================================== */
+
+      #banner {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #0a0a12;
+      }
+
+      .banner-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.22;
+        z-index: 0;
+      }
+
+      /* Dark gradient overlay for readability */
+      #banner::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(10, 10, 18, 0.55) 0%,
+          rgba(10, 10, 18, 0.45) 50%,
+          rgba(10, 10, 18, 0.75) 100%
+        );
+        z-index: 1;
+      }
+
+      /* Logo */
+      .logo {
+        position: absolute;
+        top: 28px;
+        left: 36px;
+        height: 52px;
+        width: auto;
+        z-index: 10;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+      }
+
+      /* Hero text block */
+      .banner-text {
+        position: relative;
+        z-index: 5;
+        text-align: center;
+        padding: 0 24px;
+        max-width: 820px;
+        width: 100%;
+      }
+
+      /* Eyebrow label above H1 */
+      .banner-text::before {
+        content: 'BARBERSHOP GROWTH · UK-WIDE';
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #EDEADE;
+        opacity: 0.55;
+        margin-bottom: 20px;
+      }
+
+      .banner-text h1 {
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-weight: 900;
+        color: #EDEADE;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 22px;
+      }
+
+      .banner-text p {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-weight: 400;
+        color: rgba(237, 234, 222, 0.72);
+        line-height: 1.55;
+        max-width: 540px;
+        margin: 0 auto 40px;
+      }
+
+      /* CTA Buttons */
+      .banner-btn {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .banner-btn a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 15px 32px;
+        border-radius: 3px;
+        transition: all 0.22s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Primary CTA — filled cream */
+      .banner-btn a:last-child {
+        background: #EDEADE;
+        color: #111;
+        border: 2px solid #EDEADE;
+      }
+      .banner-btn a:last-child:hover {
+        background: #d8d4c4;
+        border-color: #d8d4c4;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(237, 234, 222, 0.18);
+      }
+
+      /* Secondary CTA — outlined */
+      .banner-btn a:first-child {
+        background: transparent;
+        color: #EDEADE;
+        border: 2px solid rgba(237, 234, 222, 0.35);
+      }
+      .banner-btn a:first-child:hover {
+        border-color: rgba(237, 234, 222, 0.75);
+        background: rgba(237, 234, 222, 0.06);
+        transform: translateY(-2px);
+      }
+
+      /* Hide the span inside buttons */
+      .banner-btn a span { display: none; }
+
+      /* Scroll indicator */
+      .banner-scroll {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        opacity: 0.4;
+      }
+      .banner-scroll span {
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, #EDEADE, transparent);
+        animation: scrollPulse 1.8s ease infinite;
+      }
+      @keyframes scrollPulse {
+        0%, 100% { opacity: 0.4; transform: scaleY(1); }
+        50% { opacity: 0.8; transform: scaleY(1.15); }
+      }
+
+      /* =====================================================
+         STATS BAR
+      ===================================================== */
+
       #stats-bar {
-        background: #1a1a2e;
-        padding: 28px 20px;
+        background: #0f0f1a;
+        padding: 0;
         width: 100%;
         box-sizing: border-box;
+        border-top: 1px solid rgba(237, 234, 222, 0.07);
+        border-bottom: 1px solid rgba(237, 234, 222, 0.07);
       }
+
       .stats-bar-inner {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         flex-wrap: wrap;
-        gap: 0;
-        max-width: 860px;
+        max-width: 900px;
         margin: 0 auto;
       }
+
       .stat-item {
-        flex: 1 1 180px;
+        flex: 1 1 220px;
         text-align: center;
-        padding: 12px 24px;
+        padding: 40px 28px;
+        position: relative;
       }
+
       .stat-item .stat-number {
         display: block;
-        font-size: 2.2rem;
-        font-weight: 800;
+        font-size: 3rem;
+        font-weight: 900;
         color: #EDEADE;
-        letter-spacing: -0.5px;
-        line-height: 1.1;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin-bottom: 10px;
       }
+
       .stat-item .stat-label {
         display: block;
-        font-size: 0.82rem;
-        color: #a0a8b8;
+        font-size: 0.78rem;
+        color: #7a8296;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-top: 5px;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        line-height: 1.4;
       }
+
       .stat-divider {
         width: 1px;
-        height: 48px;
-        background: rgba(237, 234, 222, 0.18);
+        background: rgba(237, 234, 222, 0.1);
         flex-shrink: 0;
-      }
-      @media (max-width: 580px) {
-        .stat-divider { display: none; }
-        .stat-item { flex: 1 1 100%; padding: 10px 20px; }
-        .stats-bar-inner { gap: 4px; }
+        align-self: stretch;
+        margin: 20px 0;
       }
 
-      /* ── Mid-Page CTA Strip ───────────────────────────────── */
-      #cta-strip {
+      @media (max-width: 600px) {
+        .stat-divider { display: none; }
+        .stat-item { flex: 1 1 100%; padding: 28px 20px; border-bottom: 1px solid rgba(237, 234, 222, 0.07); }
+        .stat-item:last-child { border-bottom: none; }
+        .stat-item .stat-number { font-size: 2.4rem; }
+      }
+
+      /* =====================================================
+         SIDE NAV
+      ===================================================== */
+
+      #sideNav {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100vh;
+        background: #0d0d18;
+        border-left: 1px solid rgba(237, 234, 222, 0.1);
+        z-index: 900;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        align-items: center;
+        padding: 60px 40px;
+      }
+
+      #sideNav.active { right: 0; }
+
+      #sideNav nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      #sideNav nav ul li a {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(237, 234, 222, 0.45);
+        text-decoration: none;
+        padding: 10px 0;
+        transition: color 0.2s ease;
+        border-bottom: 1px solid transparent;
+      }
+
+      #sideNav nav ul li a:hover {
+        color: #EDEADE;
+        border-bottom-color: rgba(237, 234, 222, 0.2);
+      }
+
+      /* ── Menu Button ── */
+      #menuBtn {
+        position: fixed;
+        top: 24px;
+        right: 28px;
+        z-index: 1000;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        background: rgba(13, 13, 24, 0.7);
+        border: 1px solid rgba(237, 234, 222, 0.15);
+        border-radius: 4px;
+        backdrop-filter: blur(8px);
+        padding: 10px;
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+
+      #menuBtn:hover {
+        background: rgba(237, 234, 222, 0.08);
+        border-color: rgba(237, 234, 222, 0.3);
+      }
+
+      #menuBtn .bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #EDEADE;
+        border-radius: 2px;
+        transition: all 0.25s ease;
+        transform-origin: center;
+      }
+
+      #menuBtn.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      #menuBtn.active .bar:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      #menuBtn.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      #menuBtn.active .bar:nth-child(4) {
+        opacity: 0;
+      }
+
+      /* =====================================================
+         HOW IT WORKS — Feature Section
+      ===================================================== */
+
+      #feature {
         background: #111;
-        padding: 60px 20px;
-        text-align: center;
+        padding: 100px 20px;
         box-sizing: border-box;
       }
-      .cta-strip-headline {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #EDEADE;
-        margin: 0 0 12px 0;
-        line-height: 1.2;
+
+      #feature .feature-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        max-width: 1080px;
+        margin: 0 auto;
+        align-items: start;
       }
-      .cta-strip-sub {
-        font-size: 1rem;
-        color: #a0a8b8;
-        margin: 0 0 30px 0;
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
+
+      #feature .features {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
       }
-      .cta-strip-btn {
-        display: inline-block;
-        background: #EDEADE;
-        color: #111;
-        padding: 16px 36px;
+
+      #feature .features h3 {
         font-size: 1rem;
         font-weight: 700;
-        text-decoration: none;
-        border-radius: 4px;
-        letter-spacing: 0.02em;
-        transition: background 0.2s ease, color 0.2s ease;
-      }
-      .cta-strip-btn:hover {
-        background: #d4d0c0;
-        color: #111;
-      }
-      @media (max-width: 480px) {
-        .cta-strip-headline { font-size: 1.5rem; }
-        .cta-strip-btn { padding: 14px 24px; font-size: 0.95rem; }
+        color: #EDEADE;
+        letter-spacing: -0.01em;
+        margin-bottom: 14px;
+        margin-top: 36px;
+        padding-top: 36px;
+        border-top: 1px solid rgba(237, 234, 222, 0.08);
       }
 
-      /* ── FAQ Section ─────────────────────────────────────── */
-      #faq {
-        background:#1a1a2e;
-        padding: 70px 20px;
+      #feature .features h3:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      #feature .features-desc {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 4px;
+      }
+
+      #feature .feature-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(237, 234, 222, 0.07);
+        border: 1px solid rgba(237, 234, 222, 0.12);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      #feature .feature-icon i {
+        color: #EDEADE;
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      #feature .feature-text p {
+        font-size: 0.93rem;
+        color: #8a90a0;
+        line-height: 1.7;
+      }
+
+      /* Right column: clean image placeholder or decorative element */
+      #feature .features-img {
+        background: #0d0d1a;
+        border: 1px solid rgba(237, 234, 222, 0.08);
+        border-radius: 8px;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: sticky;
+        top: 80px;
+      }
+
+      #feature .features-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0.75;
+        border-radius: 8px;
+        filter: grayscale(20%);
+      }
+
+      /* If no image, show styled text */
+      #feature .features-img:not(:has(img)) {
+        font-size: 0.8rem;
+        color: rgba(237, 234, 222, 0.2);
+        letter-spacing: 0.05em;
+        text-align: center;
+        padding: 40px;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 860px) {
+        #feature .feature-box {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        #feature .features-img {
+          position: relative;
+          top: 0;
+          min-height: 260px;
+          order: -1;
+        }
+      }
+
+      /* =====================================================
+         SERVICES — 2×2 Icon Cards
+      ===================================================== */
+
+      #service {
+        background: #0d0d18;
+        padding: 100px 20px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(237, 234, 222, 0.06);
+      }
+
+      #service .service-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        max-width: 960px;
+        margin: 0 auto;
+        background: rgba(237, 234, 222, 0.06);
+        border: 1px solid rgba(237, 234, 222, 0.06);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      #service .single-service {
+        background: #0f0f1c;
+        padding: 44px 40px;
+        transition: background 0.2s ease;
+        position: relative;
+      }
+
+      #service .single-service:hover {
+        background: #13131f;
+      }
+
+      /* Service icon */
+      #service .service-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(237, 234, 222, 0.07);
+        border: 1px solid rgba(237, 234, 222, 0.12);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+
+      #service .service-icon i {
+        color: #EDEADE;
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
+
+      #service .service-desc h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #EDEADE;
+        letter-spacing: -0.01em;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      #service .service-desc hr {
+        display: none;
+      }
+
+      #service .service-desc p {
+        font-size: 0.9rem;
+        color: #7a8296;
+        line-height: 1.7;
+      }
+
+      /* Remove broken img tags — handled via CSS */
+      #service .single-service > img,
+      #service .overlay {
+        display: none;
+      }
+
+      @media (max-width: 640px) {
+        #service .service-box {
+          grid-template-columns: 1fr;
+        }
+        #service .single-service {
+          padding: 36px 28px;
+        }
+      }
+
+      /* =====================================================
+         CTA STRIP
+      ===================================================== */
+
+      #cta-strip {
+        background: #EDEADE;
+        padding: 80px 20px;
+        text-align: center;
         box-sizing: border-box;
       }
+
+      .cta-strip-headline {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 900;
+        color: #0d0d18;
+        margin: 0 0 14px 0;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+      }
+
+      .cta-strip-sub {
+        font-size: 1rem;
+        color: #444;
+        margin: 0 auto 36px;
+        max-width: 460px;
+        line-height: 1.6;
+      }
+
+      .cta-strip-btn {
+        display: inline-block;
+        background: #111;
+        color: #EDEADE;
+        padding: 16px 40px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 3px;
+        letter-spacing: 0.02em;
+        transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta-strip-btn:hover {
+        background: #1a1a2e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      @media (max-width: 480px) {
+        .cta-strip-headline { font-size: 1.6rem; }
+        .cta-strip-btn { padding: 14px 28px; }
+      }
+
+      /* =====================================================
+         FAQ
+      ===================================================== */
+
+      #faq {
+        background: #1a1a2e;
+        padding: 100px 20px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(237, 234, 222, 0.06);
+      }
+
       #faq .faq-inner {
-        max-width: 760px;
+        max-width: 720px;
         margin: 0 auto;
       }
-      #faq .title-text {
-        text-align: center;
-        margin-bottom: 40px;
-      }
+
       .faq-item {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(237, 234, 222, 0.1);
       }
+
       .faq-item:first-of-type {
-        border-top: 1px solid #ddd;
+        border-top: 1px solid rgba(237, 234, 222, 0.1);
       }
+
       .faq-item summary {
         list-style: none;
         cursor: pointer;
-        padding: 18px 40px 18px 0;
-        font-size: 1rem;
+        padding: 22px 48px 22px 0;
+        font-size: 0.97rem;
         font-weight: 600;
-        color: #fff;
+        color: #EDEADE;
         position: relative;
         user-select: none;
         line-height: 1.4;
+        transition: color 0.2s ease;
       }
+
       .faq-item summary::-webkit-details-marker { display: none; }
+
       .faq-item summary::after {
         content: '+';
         position: absolute;
@@ -224,23 +778,198 @@
         transform: translateY(-50%);
         font-size: 1.4rem;
         font-weight: 300;
-        color: #555;
-        transition: transform 0.2s ease;
+        color: rgba(237, 234, 222, 0.35);
+        transition: transform 0.25s ease, color 0.2s ease;
         line-height: 1;
+        width: 28px;
+        text-align: center;
       }
+
       .faq-item[open] summary::after {
         content: '−';
+        color: #EDEADE;
       }
+
+      .faq-item[open] summary {
+        color: #EDEADE;
+      }
+
       .faq-item .faq-answer {
-        padding: 0 40px 18px 0;
-        font-size: 0.95rem;
-        color: #444;
-        line-height: 1.65;
+        padding: 0 48px 22px 0;
+        font-size: 0.93rem;
+        color: #a0a8b8;
+        line-height: 1.7;
       }
+
       @media (max-width: 600px) {
-        #faq { padding: 50px 16px; }
-        .faq-item summary { font-size: 0.95rem; }
+        #faq { padding: 70px 16px; }
+        .faq-item summary { font-size: 0.93rem; padding-right: 36px; }
+        .faq-item .faq-answer { padding-right: 36px; }
       }
+
+      /* =====================================================
+         FOOTER SECTION — #footer (Get Started / CTA)
+      ===================================================== */
+
+      #footer {
+        background: #0d0d18;
+        padding: 100px 20px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(237, 234, 222, 0.06);
+      }
+
+      #footer > p:first-child {
+        display: none; /* hide the SEO-only paragraph visually */
+      }
+
+      #footer .footer-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 900px;
+        margin: 0 auto 60px;
+      }
+
+      #footer .footer-left h3,
+      #footer .footer-right h3 {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(237, 234, 222, 0.4);
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(237, 234, 222, 0.1);
+      }
+
+      #footer .footer-left p {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        font-size: 0.9rem;
+        color: #8a90a0;
+        padding: 9px 0;
+        border-bottom: 1px solid rgba(237, 234, 222, 0.05);
+        line-height: 1.5;
+      }
+
+      #footer .footer-left p:last-child {
+        border-bottom: none;
+      }
+
+      #footer .footer-left p i.fa-check {
+        color: #EDEADE;
+        opacity: 0.7;
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        margin-top: 2px;
+      }
+
+      #footer .footer-right p {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.9rem;
+        color: #8a90a0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(237, 234, 222, 0.05);
+        line-height: 1.5;
+      }
+
+      #footer .footer-right p:last-child { border-bottom: none; }
+
+      #footer .footer-right p a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      #footer .footer-right p a:hover { color: #EDEADE; }
+
+      #footer .footer-right p i {
+        color: rgba(237, 234, 222, 0.3);
+        font-size: 0.85rem;
+        flex-shrink: 0;
+      }
+
+      /* Social links */
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .social-links i {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(237, 234, 222, 0.12);
+        border-radius: 6px;
+        color: rgba(237, 234, 222, 0.4);
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      }
+
+      .social-links i:hover {
+        border-color: rgba(237, 234, 222, 0.4);
+        color: #EDEADE;
+        background: rgba(237, 234, 222, 0.05);
+      }
+
+      @media (max-width: 640px) {
+        #footer .footer-row {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      /* Copyright bar */
+      .footer-bottom {
+        text-align: center;
+        padding: 16px 20px;
+        background: #080810;
+        border-top: 1px solid rgba(237, 234, 222, 0.06);
+      }
+
+      .footer-bottom p {
+        font-size: 0.8rem;
+        color: rgba(237, 234, 222, 0.3);
+        margin: 0;
+      }
+
+      .footer-bottom a {
+        color: rgba(237, 234, 222, 0.4);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-bottom a:hover { color: rgba(237, 234, 222, 0.75); }
+
+      /* Sokosumi fixed legal footer */
+      .sokosumi-footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 6px 14px;
+        font-size: 10px;
+        color: rgba(200, 200, 210, 0.4);
+        z-index: 9999;
+        background: rgba(13, 13, 24, 0.75);
+        backdrop-filter: blur(6px);
+        border-top-left-radius: 4px;
+      }
+      .sokosumi-footer a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .sokosumi-footer a:hover { color: rgba(200, 200, 210, 0.75); }
+      .sokosumi-footer span { margin: 0 4px; }
+
     </style>
 
     <link rel="stylesheet" href="style.css">
@@ -250,9 +979,11 @@
 
 <body>
 
-<!-- Skip to content (accessibility) -->
 <a href="#banner" class="skip-link">Skip to main content</a>
 
+<!-- =====================================================
+     BANNER
+===================================================== -->
 <section id="banner">
     <video autoplay muted loop playsinline class="banner-video">
         <source src="barberpro.mp4" type="video/mp4">
@@ -266,9 +997,12 @@
             <a href="#footer"><span></span>Get Started — £650/mo</a>
         </div>
     </div>
+    <div class="banner-scroll" aria-hidden="true"><span></span></div>
 </section>
 
-<!-- Stats / Trust Bar -->
+<!-- =====================================================
+     STATS BAR
+===================================================== -->
 <section id="stats-bar" aria-label="Key results">
   <div class="stats-bar-inner">
     <div class="stat-item">
@@ -282,12 +1016,15 @@
     </div>
     <div class="stat-divider" aria-hidden="true"></div>
     <div class="stat-item">
-      <span class="stat-number">£650<small style="font-size:1rem;font-weight:500;">/mo</small></span>
+      <span class="stat-number">£650<small style="font-size:1.1rem;font-weight:600;opacity:0.6;">/mo</small></span>
       <span class="stat-label">Fully done for you — no setup fees</span>
     </div>
   </div>
 </section>
 
+<!-- =====================================================
+     SIDE NAV
+===================================================== -->
 <div id="sideNav">
     <nav>
         <ul>
@@ -306,103 +1043,100 @@
   <span class="bar"></span>
 </div>
 
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
 <section id="feature">
-
     <div class="title-text">
-        <p>HOW IT WORKS</p>
+        <p>How It Works</p>
         <h2>Why UK Barbers Choose the Barber Growth System</h2>
     </div>
-
     <div class="feature-box">
-
         <div class="features">
-
             <h3>Done-For-You CRM &amp; Online Booking Funnel</h3>
             <div class="features-desc">
-                <div class="feature-icon">
-                    <i class="fa fa-calendar-check-o"></i>
-                </div>
-                <div class="feature-text">
-                    <p>
-                        We set up your complete barbershop CRM and online booking funnel from scratch — no tech skills needed, no stress. Your clients book appointments 24/7 while you focus on what you do best. Works for solo barbers, independent shops, and multi-chair salons across England, Scotland, and Wales.
-                    </p>
-                </div>
+                <div class="feature-icon"><i class="fa fa-calendar-check-o"></i></div>
+                <div class="feature-text"><p>We set up your complete barbershop CRM and online booking funnel from scratch — no tech skills needed, no stress. Your clients book appointments 24/7 while you focus on what you do best. Works for solo barbers, independent shops, and multi-chair salons across England, Scotland, and Wales.</p></div>
             </div>
-
             <h3>SMS Reminders &amp; Missed Call Text-Back</h3>
             <div class="features-desc">
-                <div class="feature-icon">
-                    <i class="fa fa-mobile"></i>
-                </div>
-                <div class="feature-text">
-                    <p>
-                        Automated SMS appointment reminders cut no-shows by 30–50% from week one. And when a client calls while you're in the middle of a cut, our missed call text-back system recovers that booking automatically — so you never lose a client to the barbershop down the road again.
-                    </p>
-                </div>
+                <div class="feature-icon"><i class="fa fa-mobile"></i></div>
+                <div class="feature-text"><p>Automated SMS appointment reminders cut no-shows by 30–50% from week one. And when a client calls while you're in the middle of a cut, our missed call text-back system recovers that booking automatically — so you never lose a client to the barbershop down the road again.</p></div>
             </div>
-
             <h3>Google Review Automation &amp; Local SEO for Barbershops</h3>
             <div class="features-desc">
-                <div class="feature-icon">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="feature-text">
-                    <p>
-                        We automate your Google review requests so 5-star reviews stack up without you asking a single client. Paired with our local SEO setup for barbershops, your shop ranks higher on Google Maps — putting you in front of new clients in your area.
-                    </p>
-                </div>
+                <div class="feature-icon"><i class="fa fa-star"></i></div>
+                <div class="feature-text"><p>We automate your Google review requests so 5-star reviews stack up without you asking a single client. Paired with our local SEO setup for barbershops, your shop ranks higher on Google Maps — putting you in front of new clients in your area.</p></div>
             </div>
-
         </div>
-
         <div class="features-img">
-          <!--  <img src="images/barber-man.jpg"
-                 loading="lazy"
-                 alt="--> UK barbershop owner benefiting from the Barber Growth System — more bookings, fewer no-shows, higher Google ranking
+          UK barbershop owner benefiting from the Barber Growth System — more bookings, fewer no-shows, higher Google ranking
         </div>
-
     </div>
-
 </section>
 
+<!-- =====================================================
+     SERVICES — Icon Cards (no images)
+===================================================== -->
 <section id="service">
     <div class="title-text">
-        <p>OUR SERVICES</p>
+        <p>Our Services</p>
         <h2>Everything Your Barbershop Needs to Grow — All Done For You</h2>
     </div>
     <div class="service-box">
         <div class="single-service">
-            <img src="" loading="lazy" alt="Online booking funnel setup for UK barbershops — convert visitors into appointments instantly">
+            <div class="service-icon"><i class="fa fa-calendar-check-o"></i></div>
             <div class="overlay"></div>
-            <div class="service-desc"><h3>Online Booking Funnel</h3><hr><p>Convert website visitors into booked appointments 24/7. Your fully branded barbershop booking funnel works around the clock — turning browsers into paying clients, nationwide.</p></div>
+            <div class="service-desc">
+                <h3>Online Booking Funnel</h3>
+                <hr>
+                <p>Convert website visitors into booked appointments 24/7. Your fully branded barbershop booking funnel works around the clock — turning browsers into paying clients, nationwide.</p>
+            </div>
         </div>
         <div class="single-service">
-            <img src="" loading="lazy" alt="SMS reminders and missed call text-back system for barbershops in the UK — reduce no-shows by 30-50%">
+            <div class="service-icon"><i class="fa fa-mobile"></i></div>
             <div class="overlay"></div>
-            <div class="service-desc"><h3>SMS Reminders &amp; No-Show Reduction</h3><hr><p>Automated SMS reminders and missed call text-back keep your chairs full and your diary protected. Cut no-shows by 30–50% and recover lost bookings automatically — from day one.</p></div>
+            <div class="service-desc">
+                <h3>SMS Reminders &amp; No-Show Reduction</h3>
+                <hr>
+                <p>Automated SMS reminders and missed call text-back keep your chairs full and your diary protected. Cut no-shows by 30–50% and recover lost bookings automatically — from day one.</p>
+            </div>
         </div>
         <div class="single-service">
-            <img src="images/pic-3.jpg" loading="lazy" alt="Client reactivation campaigns for UK barbershops — bring back lapsed customers automatically">
+            <div class="service-icon"><i class="fa fa-users"></i></div>
             <div class="overlay"></div>
-            <div class="service-desc"><h3>Client Reactivation Campaigns</h3><hr><p>Bring back clients you haven't seen in weeks or months. Your existing client list is one of your biggest untapped assets — we turn it into recurring revenue with targeted reactivation campaigns.</p></div>
+            <div class="service-desc">
+                <h3>Client Reactivation Campaigns</h3>
+                <hr>
+                <p>Bring back clients you haven't seen in weeks or months. Your existing client list is one of your biggest untapped assets — we turn it into recurring revenue with targeted reactivation campaigns.</p>
+            </div>
         </div>
         <div class="single-service">
-            <img src="" loading="lazy" alt="Local SEO for barbershops UK — rank higher on Google Maps in your area">
+            <div class="service-icon"><i class="fa fa-map-marker"></i></div>
             <div class="overlay"></div>
-            <div class="service-desc"><h3>Local SEO for Barbershops</h3><hr><p>Rank higher on Google Maps so new clients in your area find you — not your competition. Our local SEO setup puts your barbershop at the top of local search results, from London to Glasgow.</p></div>
+            <div class="service-desc">
+                <h3>Local SEO for Barbershops</h3>
+                <hr>
+                <p>Rank higher on Google Maps so new clients in your area find you — not your competition. Our local SEO setup puts your barbershop at the top of local search results, from London to Glasgow.</p>
+            </div>
         </div>
     </div>
 </section>
-   
 
-<!-- Mid-Page CTA Strip -->
+<!-- =====================================================
+     CTA STRIP
+===================================================== -->
 <section id="cta-strip">
   <h2 class="cta-strip-headline">Ready to Stop Losing Bookings?</h2>
   <p class="cta-strip-sub">Join UK barbers already filling their chairs with the Barber Growth System.</p>
   <a href="#footer" class="cta-strip-btn">Get Started — £650/mo</a>
 </section>
 
-<!-- <section id="testimonial">
+<!-- =====================================================
+     TESTIMONIALS — Commented Out (preserved)
+===================================================== -->
+<!--
+<section id="testimonial">
     <div class="title-text">
         <p>TESTIMONIALS</p>
         <h2>What UK Barbers Are Saying About the Growth System</h2>
@@ -410,61 +1144,58 @@
     <div class="testimonial-row">
         <div class="testimonial-col">
             <div class="user">
-                <img src="images/img-1.jpg" loading="lazy" alt="UK barber testimonial — results from the Barber Growth System, chairs fuller within 2 weeks">
+                <img src="images/img-1.jpg" loading="lazy" alt="UK barber testimonial">
                 <div class="user-info"><h4>Marcus T.<i class="fa fa-star"></i></h4><small>Independent Barber, Birmingham</small></div>
             </div>
             <p>"Within 2 weeks, my missed bookings dropped by 40%, and my chairs were fuller than ever. I didn't have to do a thing — it was all set up for me. Best investment I've made in the shop."</p>
         </div>
         <div class="testimonial-col">
             <div class="user">
-                <img src="images/img-2.jpg" loading="lazy" alt="Barbershop owner testimonial — missed call text-back system paid for itself in the first month">
+                <img src="images/img-2.jpg" loading="lazy" alt="Barbershop owner testimonial">
                 <div class="user-info"><h4>Dean W.<i class="fa fa-star"></i></h4><small>Barbershop Owner, Manchester</small></div>
             </div>
             <p>"The missed call text-back alone paid for the whole system in the first month. I was losing so many bookings when I was busy cutting — now every missed call gets followed up automatically and turns into an appointment."</p>
         </div>
         <div class="testimonial-col">
             <div class="user">
-                <img src="images/img-3.jpg" loading="lazy" alt="London barber testimonial — Google reviews and local SEO results from the Barber Growth System">
+                <img src="images/img-3.jpg" loading="lazy" alt="London barber testimonial">
                 <div class="user-info"><h4>Tariq A.<i class="fa fa-star"></i></h4><small>Barber &amp; Shop Owner, London</small></div>
             </div>
             <p>"My Google reviews went from 14 to over 60 in two months — without me asking a single client. We're now the top-ranked barbershop on Google Maps in our area. I can't believe I was running without this."</p>
         </div>
     </div>
-</section>-->
+</section>
+-->
 
-<!-- FAQ Section -->
+<!-- =====================================================
+     FAQ
+===================================================== -->
 <section id="faq">
   <div class="faq-inner">
     <div class="title-text">
       <p>FAQ</p>
       <h2>Frequently Asked Questions</h2>
     </div>
-
     <details class="faq-item">
       <summary>How quickly will I see results?</summary>
       <div class="faq-answer">Most barbers see a reduction in no-shows within the first 7–14 days. Full results — Google reviews, reactivation campaigns, local SEO improvements — typically take 4–8 weeks.</div>
     </details>
-
     <details class="faq-item">
       <summary>Do I need any tech skills to use this?</summary>
       <div class="faq-answer">None. We handle the entire setup for you — CRM, booking funnel, automations, everything. You just keep cutting hair.</div>
     </details>
-
     <details class="faq-item">
       <summary>Is this just for big barbershops?</summary>
       <div class="faq-answer">No — the system works for solo barbers, 2–3 chair independent shops, and multi-location barbershops across the UK.</div>
     </details>
-
     <details class="faq-item">
       <summary>What happens if I miss a call?</summary>
       <div class="faq-answer">Our missed call text-back fires automatically within seconds. The client gets a personalised SMS and is prompted to book — turning missed calls into confirmed appointments.</div>
     </details>
-
     <details class="faq-item">
       <summary>How does the £650/month work?</summary>
       <div class="faq-answer">It's a simple monthly retainer. No setup fees, no long contracts. You get the full system, fully managed, every month.</div>
     </details>
-
     <details class="faq-item">
       <summary>Do you work with barbershops outside London?</summary>
       <div class="faq-answer">Yes — we serve barbers UK-wide. England, Scotland, Wales. Whether you're in a city centre or a market town, the system works the same.</div>
@@ -472,14 +1203,15 @@
   </div>
 </section>
 
+<!-- =====================================================
+     FOOTER / GET STARTED
+===================================================== -->
 <section id="footer">
     <p>Barber Growth System — done-for-you barbershop marketing UK, serving barbers nationwide</p>
-
     <div class="title-text">
-        <p>GET STARTED</p>
+        <p>Get Started</p>
         <h2>Stop Losing Bookings. Start Growing.</h2>
     </div>
-
     <div class="footer-row">
         <div class="footer-left">
             <h3>The Barber Growth System — £650/month</h3>
@@ -491,7 +1223,6 @@
             <p><i class="fa fa-check"></i>&nbsp;Client Reactivation Campaigns — bring old clients back</p>
             <p><i class="fa fa-check"></i>&nbsp;Local SEO Setup — rank higher on Google Maps</p>
         </div>
-
         <div class="footer-right">
             <h3>Get In Touch</h3>
             <p>United Kingdom — Nationwide <i class="fa fa-map-marker"></i></p>
@@ -499,37 +1230,48 @@
             <p>Serving barbers across England, Scotland &amp; Wales <i class="fa fa-phone"></i></p>
         </div>
     </div>
-
     <div class="social-links">
         <i class="fa fa-facebook"></i>
         <i class="fa fa-instagram"></i>
         <i class="fa fa-twitter"></i>
         <i class="fa fa-youtube-play"></i>
     </div>
-
-    <div class="footer-bottom" style="text-align:center; padding:10px; color:beige; background:#222;">
-        <p style="margin:0;">
-            Copyright &copy; 2026
-            <a href="https://acquisitionhub.github.io/Barberpro/" style="color:beige; text-decoration:none;">acquisitionhub.github.io/Barberpro</a>
-            |
-            <a href="https://acquisitionhub.github.io/Barberpro" style="color:beige; text-decoration:none;">Milestone Marketing Ltd</a>
-        </p>
-    </div>
 </section>
 
+<!-- =====================================================
+     COPYRIGHT BAR
+===================================================== -->
+<div class="footer-bottom">
+    <p>
+        Copyright &copy; 2026
+        <a href="https://acquisitionhub.github.io/Barberpro/">acquisitionhub.github.io/Barberpro</a>
+        &nbsp;|&nbsp;
+        <a href="https://acquisitionhub.github.io/Barberpro">Milestone Marketing Ltd</a>
+    </p>
+</div>
+
+<!-- =====================================================
+     JAVASCRIPT — Menu + Smooth Scroll (unchanged)
+===================================================== -->
 <script>
    var menuBtn = document.getElementById("menuBtn");
-var sideNav = document.getElementById("sideNav");
-
-menuBtn.onclick = function () {
-
-menuBtn.classList.toggle("active");
-sideNav.classList.toggle("active");
-
-}
-    var scroll = new SmoothScroll('a[href*="#"]', { speed: 1000, speedAsDuration: true })
+   var sideNav = document.getElementById("sideNav");
+   menuBtn.onclick = function () {
+     menuBtn.classList.toggle("active");
+     sideNav.classList.toggle("active");
+   }
+   var scroll = new SmoothScroll('a[href*="#"]', { speed: 1000, speedAsDuration: true })
 </script>
 
-<footer style="position:fixed;bottom:0;right:0;padding:8px 16px;font-size:11px;color:#999;z-index:9999;background:rgba(255,255,255,0.85);"><a href="https://acquisitionhub.github.io/Barberpro/" style="color:#999;text-decoration:none;">Barberpro</a><span style="margin:0 4px;">&middot;</span><a href="https://acquisitionhub.github.io/Barberpro/" style="color:#999;text-decoration:none;">Privacy Policy</a><span style="margin:0 4px;">&middot;</span><a href="https://acquisitionhub.github.io/Barberpro/" style="color:#999;text-decoration:none;">Terms of Use</a></footer>
-<footer style="position:fixed;bottom:0;right:0;padding:8px 16px;font-size:11px;color:#999;z-index:9999;background:rgba(255,255,255,0.85);"><a href="https://acquisitionhub.github.io/Barberpro/" style="color:#999;text-decoration:none;">Barberpro</a><span style="margin:0 4px;">&middot;</span><a href="https://acquisitionhub.github.io/Barberpro/" style="color:#999;text-decoration:none;">Privacy Policy</a><span style="margin:0 4px;">&middot;</span><a href="https://acquisitionhub.github.io/Barberpro/" style="color:#999;text-decoration:none;">Terms of Use</a></footer></body>
+<!-- Sokosumi Legal Footer (fixed) -->
+<footer class="sokosumi-footer">
+  <a href="https://acquisitionhub.github.io/Barberpro/">Barberpro</a>
+  <span>&middot;</span>
+  <a href="https://acquisitionhub.github.io/Barberpro/">Privacy Policy</a>
+  <span>&middot;</span>
+  <a href="https://acquisitionhub.github.io/Barberpro/">Terms of Use</a>
+</footer>
+
+<footer style="position:fixed;bottom:0;right:0;padding:8px 16px;font-size:11px;color:#999;z-index:9999;background:rgba(255,255,255,0.85);"><a href="https://www.sokosumi.com/de/imprint" style="color:#999;text-decoration:none;">Imprint</a><span style="margin:0 4px;">&middot;</span><a href="https://www.sokosumi.com/de/privacy-policy" style="color:#999;text-decoration:none;">Privacy Policy</a><span style="margin:0 4px;">&middot;</span><a href="https://www.sokosumi.com/de/terms-of-service" style="color:#999;text-decoration:none;">Terms of Use</a></footer></body>
 </html>
+
