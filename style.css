@@ -1,138 +1,14 @@
-#service{
-background:#1a1a2e;
-padding:70px 0;
-}
-#testimonial{
-display:none;
-}
-/* GENERAL RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* font-family: 'Poppins', sans-serif; */
-}
-
-/* BANNER SECTION */
-#banner {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen */
-    overflow: hidden;
-}
-
-.banner-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-/* Gradient overlay for white effect (#f5f5f5) */
-#banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:none;
-    z-index: 2;
-    pointer-events: none; /* So buttons are clickable */
-}
-
-/* Banner text positioning */
-.banner-text {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    color: #000; /* Black text on white gradient */
-    padding-top: 180px;
-}
-
-.banner-text h1 {
-    font-size: 70px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.banner-text p {
-    font-size: 20px;
-    margin-top: 10px;
-    font-style: italic;
-}
-
-/* Logo */
-.logo {
-    position: absolute;
-    width: 140px;
-    top: 4%;
-    left: 10%;
-    z-index: 3;
-}
-
-/* Buttons */
-.banner-btn {
-    margin: 70px auto 0;
-    text-align: center;
-    z-index: 3;
-}
-
-.banner-btn a {
-    width: 150px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 0 10px;
-    padding: 12px 0;
-    color: #000; /* Black text to match gradient */
-    border: 0.5px solid #000;
-    position: relative;
-    z-index: 1;
-    transition: color 0.5s;
-}
-
-.banner-btn a span {
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #000;
-    z-index: -1;
-    transition: 0.5s;
-}
-
-.banner-btn a:hover span {
-    width: 100%;
-}
-
-.banner-btn a:hover {
-    color: #fff;
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 770px) {
-    .banner-text h1 {
-        font-size: 44px;
-    }
-
-    .banner-btn a {
-        display: block;
-        margin: 20px auto;
-    }
-}
 /* ============================================================
-   BARBER GROWTH SYSTEM — style.css
+   BARBER GROWTH SYSTEM â€” style.css
    Milestone Marketing Ltd | acquisitionhub.github.io/Barberpro
-   Accent colour: #EDEADE (warm cream)
-   Background: #111 / #1a1a1a / #222 (dark)
+   Redesign: Premium Dark Theme â€” Inter font
+   Palette: #0d0d18 / #111 / #1a1a2e | Accent: #EDEADE
+   Updated to match: index.html (full redesign)
    ============================================================ */
 
+
 /* ============================================================
-   RESET & BASE
+   1. RESET & BASE
    ============================================================ */
 
 *, *::before, *::after {
@@ -146,10 +22,11 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #111;
-    color: #e0e0e0;
-    line-height: 1.7;
+    color: #c8c4b8;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
 
@@ -163,566 +40,895 @@ a {
     color: inherit;
 }
 
-/* ============================================================
-   TYPOGRAPHY HELPERS
-   ============================================================ */
-
 h1, h2, h3, h4 {
-    line-height: 1.25;
-    font-weight: 700;
+    line-height: 1.2;
 }
 
+
 /* ============================================================
-   SECTION TITLE (reused across all sections)
-   .title-text > p (label) + h2 (heading)
+   2. ACCESSIBILITY â€” Skip link
+   ============================================================ */
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #EDEADE;
+    color: #111;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 99999;
+    border-bottom-right-radius: 6px;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+/* ============================================================
+   3. SECTION TITLE â€” reused across all sections
+   Structure: .title-text > p (label) + h2 (heading)
    ============================================================ */
 
 .title-text {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 52px;
 }
 
-.title-text p {
-    font-size: 13px;
-    letter-spacing: 4px;
+.title-text > p {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #EDEADE;
-    margin-bottom: 10px;
-    font-weight: 600;
+    opacity: 0.6;
+    margin-bottom: 14px;
 }
 
 .title-text h2 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: #fff;
-    max-width: 700px;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: #EDEADE;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    max-width: 620px;
     margin: 0 auto;
 }
 
+
 /* ============================================================
-   BANNER — Full-screen hero with video background
+   4. BANNER â€” Full-viewport hero with video background
    ============================================================ */
 
 #banner {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 560px;
-    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    background: #0a0a12;
 }
 
-/* Video background */
+/* Video background â€” low opacity for dark premium feel */
 .banner-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    opacity: 0.22;
     z-index: 0;
 }
 
-/* Dark overlay over video */
+/* Gradient overlay for readability */
 #banner::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.60);
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 18, 0.55) 0%,
+        rgba(10, 10, 18, 0.45) 50%,
+        rgba(10, 10, 18, 0.75) 100%
+    );
     z-index: 1;
 }
 
-/* Logo — top left */
+/* Logo â€” top left */
 .logo {
     position: absolute;
-    top: 22px;
-    left: 30px;
-    width: 120px;
-    z-index: 3;
+    top: 28px;
+    left: 36px;
+    height: 52px;
+    width: auto;
+    z-index: 10;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 /* Hero text block */
 .banner-text {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 24px;
     max-width: 820px;
+    width: 100%;
+}
+
+/* Eyebrow label above H1 (CSS pseudo-element) */
+.banner-text::before {
+    content: 'BARBERSHOP GROWTH Â· UK-WIDE';
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #EDEADE;
+    opacity: 0.55;
+    margin-bottom: 20px;
 }
 
 .banner-text h1 {
-    font-size: clamp(2rem, 5vw, 3.6rem);
-    color: #fff;
-    margin-bottom: 18px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    color: #EDEADE;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
 }
 
-.banner-text > p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: #EDEADE;
-    margin-bottom: 36px;
+.banner-text p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 400;
+    color: rgba(237, 234, 222, 0.72);
+    line-height: 1.55;
+    max-width: 540px;
+    margin: 0 auto 40px;
 }
 
 /* CTA Buttons */
 .banner-btn {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .banner-btn a {
-    position: relative;
-    display: inline-block;
-    padding: 14px 34px;
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border: 2px solid #EDEADE;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 15px 32px;
+    border-radius: 3px;
+    transition: all 0.22s ease;
+    position: relative;
     overflow: hidden;
-    transition: color 0.35s ease, background 0.35s ease;
 }
 
-.banner-btn a span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: #EDEADE;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.55s ease, height 0.55s ease;
-    z-index: 0;
+/* Secondary CTA â€” outlined ghost */
+.banner-btn a:first-child {
+    background: transparent;
+    color: #EDEADE;
+    border: 2px solid rgba(237, 234, 222, 0.35);
 }
 
-.banner-btn a:hover span {
-    width: 300px;
-    height: 300px;
+.banner-btn a:first-child:hover {
+    border-color: rgba(237, 234, 222, 0.75);
+    background: rgba(237, 234, 222, 0.06);
+    transform: translateY(-2px);
 }
 
-.banner-btn a:hover {
-    color: #111;
-}
-
+/* Primary CTA â€” filled cream */
 .banner-btn a:last-child {
     background: #EDEADE;
     color: #111;
+    border: 2px solid #EDEADE;
 }
 
 .banner-btn a:last-child:hover {
-    background: transparent;
-    color: #fff;
+    background: #d8d4c4;
+    border-color: #d8d4c4;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(237, 234, 222, 0.18);
 }
 
+/* Legacy ripple <span> inside buttons â€” not used in new design */
+.banner-btn a span {
+    display: none;
+}
+
+/* Scroll indicator â€” animated vertical line at hero bottom */
+.banner-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.4;
+}
+
+.banner-scroll span {
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, #EDEADE, transparent);
+    animation: scrollPulse 1.8s ease infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 0.8; transform: scaleY(1.15); }
+}
+
+
 /* ============================================================
-   SIDE NAV
+   5. STATS BAR â€” Key metrics strip
+   ============================================================ */
+
+#stats-bar {
+    background: #0f0f1a;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(237, 234, 222, 0.07);
+    border-bottom: 1px solid rgba(237, 234, 222, 0.07);
+}
+
+.stats-bar-inner {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    flex: 1 1 220px;
+    text-align: center;
+    padding: 40px 28px;
+    position: relative;
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #EDEADE;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-item .stat-label {
+    display: block;
+    font-size: 0.78rem;
+    color: #7a8296;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Vertical divider between stats */
+.stat-divider {
+    width: 1px;
+    background: rgba(237, 234, 222, 0.1);
+    flex-shrink: 0;
+    align-self: stretch;
+    margin: 20px 0;
+}
+
+
+/* ============================================================
+   6. SIDE NAV â€” Fixed right panel
    ============================================================ */
 
 #sideNav {
     position: fixed;
     top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background: #1a1a1a;
-    z-index: 1000;
-    transition: right 0.4s ease;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: #0d0d18;
+    border-left: 1px solid rgba(237, 234, 222, 0.1);
+    z-index: 900;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    padding: 60px 40px;
 }
 
-#sideNav nav {
-    padding-top: 80px;
+#sideNav.active {
+    right: 0;
 }
 
 #sideNav nav ul {
     list-style: none;
-}
-
-#sideNav nav ul li {
-    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 #sideNav nav ul li a {
     display: block;
-    padding: 16px 30px;
-    color: #e0e0e0;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 600;
-    transition: color 0.25s ease, padding-left 0.25s ease;
+    color: rgba(237, 234, 222, 0.45);
+    text-decoration: none;
+    padding: 10px 0;
+    transition: color 0.2s ease;
+    border-bottom: 1px solid transparent;
 }
 
 #sideNav nav ul li a:hover {
     color: #EDEADE;
-    padding-left: 40px;
+    border-bottom-color: rgba(237, 234, 222, 0.2);
 }
 
-/* Menu toggle button */
-#menuBtn {
-    position: fixed;
-    top: 18px;
-    right: 24px;
-    z-index: 1001;
-    cursor: pointer;
-    width: 36px;
-}
-
-#menuBtn img {
-    width: 100%;
-    filter: invert(1);
-}
 
 /* ============================================================
-   FEATURES SECTION
+   7. MENU BUTTON â€” CSS-only hamburger / X toggle
+   Note: New design uses .bar <span> elements â€” no <img> tag.
+         Old #menuBtn img { filter: invert(1) } rule removed.
+   ============================================================ */
+
+#menuBtn {
+    position: fixed;
+    top: 24px;
+    right: 28px;
+    z-index: 1000;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: rgba(13, 13, 24, 0.7);
+    border: 1px solid rgba(237, 234, 222, 0.15);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#menuBtn:hover {
+    background: rgba(237, 234, 222, 0.08);
+    border-color: rgba(237, 234, 222, 0.3);
+}
+
+/* Hamburger bars */
+#menuBtn .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #EDEADE;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    transform-origin: center;
+}
+
+/* Active state: bars 1 & 3 form an X, bars 2 & 4 vanish */
+#menuBtn.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#menuBtn.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#menuBtn.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+#menuBtn.active .bar:nth-child(4) {
+    opacity: 0;
+}
+
+
+/* ============================================================
+   8. HOW IT WORKS â€” Feature section
    ============================================================ */
 
 #feature {
-    background: #141414;
-    padding: 90px 5%;
+    background: #111;
+    padding: 100px 20px;
+    box-sizing: border-box;
 }
 
-.feature-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 60px;
-    max-width: 1100px;
+#feature .feature-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 1080px;
     margin: 0 auto;
+    align-items: start;
 }
 
-/* Left column: feature list */
-.features {
-    flex: 1;
-}
-
-.features h3 {
-    font-size: 1.1rem;
-    color: #EDEADE;
-    margin-bottom: 12px;
-    margin-top: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.features h3:first-child {
-    margin-top: 0;
-}
-
-.features-desc {
+#feature .features {
     display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    margin-bottom: 14px;
+    flex-direction: column;
+    gap: 0;
 }
 
-.feature-icon {
-    flex-shrink: 0;
-    width: 46px;
-    height: 46px;
-    background: #EDEADE;
-    border-radius: 4px;
+#feature .features h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #EDEADE;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(237, 234, 222, 0.08);
+}
+
+#feature .features h3:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+#feature .features-desc {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+/* Feature icon â€” subtle bordered square */
+#feature .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(237, 234, 222, 0.07);
+    border: 1px solid rgba(237, 234, 222, 0.12);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
-.feature-icon i {
-    font-size: 1.3rem;
-    color: #111;
+#feature .feature-icon i {
+    color: #EDEADE;
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
-.feature-text p {
-    font-size: 0.95rem;
-    color: #bbb;
+#feature .feature-text p {
+    font-size: 0.93rem;
+    color: #8a90a0;
     line-height: 1.7;
 }
 
-/* Right column: image */
-.features-img {
-    flex: 0 0 40%;
-    max-width: 420px;
+/* Right column â€” image or styled placeholder */
+#feature .features-img {
+    background: #0d0d1a;
+    border: 1px solid rgba(237, 234, 222, 0.08);
+    border-radius: 8px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: sticky;
+    top: 80px;
 }
 
-.features-img img {
+#feature .features-img img {
     width: 100%;
-    border-radius: 4px;
+    height: 100%;
     object-fit: cover;
-    height: 480px;
-    filter: brightness(0.85);
+    display: block;
+    opacity: 0.75;
+    border-radius: 8px;
+    filter: grayscale(20%);
 }
+
+/* Styled text fallback when no img present */
+#feature .features-img:not(:has(img)) {
+    font-size: 0.8rem;
+    color: rgba(237, 234, 222, 0.2);
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.8;
+}
+
 
 /* ============================================================
-   SERVICES SECTION
+   9. SERVICES â€” 2Ã—2 icon card grid
+   Note: No <img> tags or .overlay elements in new design.
+         Old image-hover / overlay / translateY slide styles removed.
    ============================================================ */
 
 #service {
-    background: #111;
-    padding: 90px 5%;
+    background: #0d0d18;
+    padding: 100px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(237, 234, 222, 0.06);
 }
 
-.service-box {
+/* Hair-line gap between cards acts as a grid border */
+#service .service-box {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    max-width: 960px;
     margin: 0 auto;
-}
-
-.single-service {
-    position: relative;
+    background: rgba(237, 234, 222, 0.06);
+    border: 1px solid rgba(237, 234, 222, 0.06);
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.single-service img {
-    width: 100%;
-    height: 340px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
+#service .single-service {
+    background: #0f0f1c;
+    padding: 44px 40px;
+    transition: background 0.2s ease;
+    position: relative;
 }
 
-.single-service:hover img {
-    transform: scale(1.06);
+#service .single-service:hover {
+    background: #13131f;
 }
 
-/* Dark overlay */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.2) 100%);
-    z-index: 1;
+/* Icon block above card text */
+#service .service-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(237, 234, 222, 0.07);
+    border: 1px solid rgba(237, 234, 222, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
 }
 
-/* Service text — always visible at bottom */
-.service-desc {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 24px 20px;
-    z-index: 2;
-    transform: translateY(60px);
-    transition: transform 0.4s ease;
-}
-
-.single-service:hover .service-desc {
-    transform: translateY(0);
-}
-
-.service-desc h3 {
-    font-size: 1rem;
+#service .service-icon i {
     color: #EDEADE;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
-.service-desc hr {
-    border: none;
-    border-top: 1px solid #EDEADE;
-    margin-bottom: 10px;
-    opacity: 0.5;
+#service .service-desc h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #EDEADE;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    line-height: 1.3;
 }
 
-.service-desc p {
-    font-size: 0.85rem;
-    color: #ddd;
+/* Divider hidden in new card design */
+#service .service-desc hr {
+    display: none;
+}
+
+#service .service-desc p {
+    font-size: 0.9rem;
+    color: #7a8296;
+    line-height: 1.7;
+}
+
+/* Legacy broken <img> tags and .overlay â€” hidden (no images in new design) */
+#service .single-service > img,
+#service .overlay {
+    display: none;
+}
+
+
+/* ============================================================
+   10. CTA STRIP â€” Inverted cream section (dark text on light bg)
+   ============================================================ */
+
+#cta-strip {
+    background: #EDEADE;
+    padding: 80px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cta-strip-headline {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: #0d0d18;
+    margin: 0 0 14px 0;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.cta-strip-sub {
+    font-size: 1rem;
+    color: #444;
+    margin: 0 auto 36px;
+    max-width: 460px;
     line-height: 1.6;
 }
 
+.cta-strip-btn {
+    display: inline-block;
+    background: #111;
+    color: #EDEADE;
+    padding: 16px 40px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-strip-btn:hover {
+    background: #1a1a2e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+
 /* ============================================================
-   TESTIMONIALS SECTION
+   11. FAQ â€” Native <details>/<summary> accordion
    ============================================================ */
 
-#testimonial {
-    background: #141414;
-    padding: 90px 5%;
+#faq {
+    background: #1a1a2e;
+    padding: 100px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(237, 234, 222, 0.06);
 }
 
-.testimonial-row {
-    display: flex;
-    gap: 24px;
-    max-width: 1100px;
+#faq .faq-inner {
+    max-width: 720px;
     margin: 0 auto;
-    flex-wrap: wrap;
 }
 
-.testimonial-col {
-    flex: 1;
-    min-width: 260px;
-    background: #1e1e1e;
-    border-left: 3px solid #EDEADE;
-    padding: 28px 24px;
-    border-radius: 4px;
+.faq-item {
+    border-bottom: 1px solid rgba(237, 234, 222, 0.1);
 }
 
-.testimonial-col > p {
-    font-size: 0.92rem;
-    color: #bbb;
-    line-height: 1.75;
-    font-style: italic;
-    margin-top: 18px;
+.faq-item:first-of-type {
+    border-top: 1px solid rgba(237, 234, 222, 0.1);
 }
 
-/* User row inside testimonial */
-.user {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.user img {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #EDEADE;
-    flex-shrink: 0;
-}
-
-.user-info h4 {
-    font-size: 0.95rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.user-info h4 i {
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 48px 22px 0;
+    font-size: 0.97rem;
+    font-weight: 600;
     color: #EDEADE;
-    font-size: 0.85rem;
+    position: relative;
+    user-select: none;
+    line-height: 1.4;
+    transition: color 0.2s ease;
 }
 
-.user-info small {
-    font-size: 0.78rem;
-    color: #888;
+/* Remove default browser disclosure triangle */
+.faq-item summary::-webkit-details-marker {
+    display: none;
 }
+
+/* + / âˆ’ toggle indicator */
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: rgba(237, 234, 222, 0.35);
+    transition: transform 0.25s ease, color 0.2s ease;
+    line-height: 1;
+    width: 28px;
+    text-align: center;
+}
+
+.faq-item[open] summary::after {
+    content: 'âˆ’';
+    color: #EDEADE;
+}
+
+.faq-item[open] summary {
+    color: #EDEADE;
+}
+
+.faq-item .faq-answer {
+    padding: 0 48px 22px 0;
+    font-size: 0.93rem;
+    color: #a0a8b8;
+    line-height: 1.7;
+}
+
 
 /* ============================================================
-   FOOTER / CTA SECTION
+   12. FOOTER SECTION â€” #footer (Get Started / CTA)
    ============================================================ */
 
 #footer {
-    background: #111;
-    padding: 90px 5% 60px;
-    position: relative;
+    background: #0d0d18;
+    padding: 100px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(237, 234, 222, 0.06);
 }
 
-/* Decorative footer image — full width, above content */
-.footer-img {
-    width: 100%;
-    max-height: 280px;
-    object-fit: cover;
-    margin-bottom: 60px;
-    border-radius: 4px;
-    filter: brightness(0.6);
+/* Hide SEO-only paragraph (first direct child <p>) */
+#footer > p:first-child {
+    display: none;
 }
 
-.footer-row {
-    display: flex;
+#footer .footer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
-    max-width: 1100px;
-    margin: 0 auto 50px;
-    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 60px;
 }
 
-.footer-left,
-.footer-right {
-    flex: 1;
-    min-width: 260px;
-}
-
-.footer-left h3,
-.footer-right h3 {
-    font-size: 1.1rem;
-    color: #EDEADE;
-    margin-bottom: 20px;
+/* Column headings */
+#footer .footer-left h3,
+#footer .footer-right h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: rgba(237, 234, 222, 0.4);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(237, 234, 222, 0.1);
 }
 
-.footer-left p,
-.footer-right p {
-    font-size: 0.92rem;
-    color: #bbb;
-    margin-bottom: 10px;
+/* Checklist rows â€” left column */
+#footer .footer-left p {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 10px;
+    font-size: 0.9rem;
+    color: #8a90a0;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(237, 234, 222, 0.05);
+    line-height: 1.5;
 }
 
-.footer-left p i,
-.footer-right p i {
+#footer .footer-left p:last-child {
+    border-bottom: none;
+}
+
+#footer .footer-left p i.fa-check {
     color: #EDEADE;
-    font-size: 1rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+/* Contact rows â€” right column */
+#footer .footer-right p {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #8a90a0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(237, 234, 222, 0.05);
+    line-height: 1.5;
+}
+
+#footer .footer-right p:last-child {
+    border-bottom: none;
+}
+
+#footer .footer-right p a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#footer .footer-right p a:hover {
+    color: #EDEADE;
+}
+
+#footer .footer-right p i {
+    color: rgba(237, 234, 222, 0.3);
+    font-size: 0.85rem;
     flex-shrink: 0;
 }
 
-/* Social links */
+/* Social icons */
 .social-links {
     display: flex;
-    gap: 18px;
     justify-content: center;
-    padding-top: 30px;
-    border-top: 1px solid #2a2a2a;
-    max-width: 1100px;
-    margin: 0 auto;
+    gap: 16px;
+    margin-top: 20px;
 }
 
 .social-links i {
-    font-size: 1.4rem;
-    color: #888;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(237, 234, 222, 0.12);
+    border-radius: 6px;
+    color: rgba(237, 234, 222, 0.4);
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: color 0.25s ease, transform 0.25s ease;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .social-links i:hover {
+    border-color: rgba(237, 234, 222, 0.4);
     color: #EDEADE;
-    transform: translateY(-3px);
+    background: rgba(237, 234, 222, 0.05);
 }
+
 
 /* ============================================================
-   COPYRIGHT BAR
+   13. COPYRIGHT BAR â€” .footer-bottom
    ============================================================ */
 
-.row {
-    width: 100%;
-}
-
-.row .footer {
-    color: beige;
+.footer-bottom {
     text-align: center;
-    padding: 14px 20px;
-    background: #222;
-    font-size: 0.82rem;
+    padding: 16px 20px;
+    background: #080810;
+    border-top: 1px solid rgba(237, 234, 222, 0.06);
 }
 
-.row .footer a {
-    color: beige;
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(237, 234, 222, 0.3);
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: rgba(237, 234, 222, 0.4);
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: color 0.2s ease;
 }
 
-.row .footer a:hover {
-    opacity: 0.75;
-    text-decoration: underline;
+.footer-bottom a:hover {
+    color: rgba(237, 234, 222, 0.75);
 }
+
 
 /* ============================================================
-   FIXED LEGAL FOOTER (Sokosumi)
+   14. TESTIMONIALS â€” hidden (section commented out in HTML)
    ============================================================ */
 
+#testimonial {
+    display: none;
+}
+
+
+/* ============================================================
+   15. FIXED LEGAL FOOTER (Sokosumi â€” injected at runtime)
+   ============================================================ */
+
+.sokosumi-footer,
 body > footer[style] {
     position: fixed;
     bottom: 0;
@@ -730,36 +936,48 @@ body > footer[style] {
     z-index: 9999;
 }
 
+
 /* ============================================================
-   RESPONSIVE — Tablet (≤ 900px)
+   16. RESPONSIVE â€” Tablet (â‰¤ 860px)
    ============================================================ */
 
-@media (max-width: 900px) {
-    .feature-box {
-        flex-direction: column;
+@media (max-width: 860px) {
+    #feature .feature-box {
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .features-img {
-        max-width: 100%;
-        flex: none;
-    }
-
-    .features-img img {
-        height: 300px;
-    }
-
-    .service-box {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-desc {
-        transform: translateY(0);
+    #feature .features-img {
+        position: relative;
+        top: 0;
+        min-height: 260px;
+        order: -1;
     }
 }
 
+
 /* ============================================================
-   RESPONSIVE — Mobile (≤ 600px)
+   17. RESPONSIVE â€” Mobile large (â‰¤ 640px)
+   ============================================================ */
+
+@media (max-width: 640px) {
+    #service .service-box {
+        grid-template-columns: 1fr;
+    }
+
+    #service .single-service {
+        padding: 36px 28px;
+    }
+
+    #footer .footer-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+
+/* ============================================================
+   18. RESPONSIVE â€” Mobile (â‰¤ 600px)
    ============================================================ */
 
 @media (max-width: 600px) {
@@ -767,11 +985,17 @@ body > footer[style] {
         min-height: 100svh;
     }
 
-    .banner-text h1 {
-        font-size: 1.8rem;
+    .logo {
+        height: 40px;
+        top: 20px;
+        left: 20px;
     }
 
-    .banner-text > p {
+    .banner-text h1 {
+        font-size: 2rem;
+    }
+
+    .banner-text p {
         font-size: 0.95rem;
     }
 
@@ -783,45 +1007,67 @@ body > footer[style] {
     .banner-btn a {
         width: 100%;
         max-width: 280px;
-        text-align: center;
+    }
+
+    /* Stats bar â€” stack vertically with horizontal dividers */
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-item {
+        flex: 1 1 100%;
+        padding: 28px 20px;
+        border-bottom: 1px solid rgba(237, 234, 222, 0.07);
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-item .stat-number {
+        font-size: 2.4rem;
     }
 
     #feature,
     #service,
-    #testimonial,
+    #faq,
     #footer {
-        padding: 60px 5%;
+        padding: 70px 16px;
     }
 
-    .service-box {
-        grid-template-columns: 1fr;
+    .faq-item summary {
+        font-size: 0.93rem;
+        padding-right: 36px;
     }
 
-    .single-service img {
-        height: 260px;
-    }
-
-    .testimonial-row {
-        flex-direction: column;
-    }
-
-    .footer-row {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .footer-img {
-        max-height: 180px;
-        margin-bottom: 40px;
+    .faq-item .faq-answer {
+        padding-right: 36px;
     }
 
     .title-text h2 {
-        font-size: 1.4rem;
+        font-size: 1.45rem;
     }
 
-    .logo {
-        width: 90px;
-        top: 16px;
-        left: 16px;
+    .cta-strip-headline {
+        font-size: 1.6rem;
+    }
+
+    .cta-strip-btn {
+        padding: 14px 28px;
+    }
+}
+
+
+/* ============================================================
+   19. RESPONSIVE â€” Small mobile (â‰¤ 480px)
+   ============================================================ */
+
+@media (max-width: 480px) {
+    .banner-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .cta-strip-btn {
+        font-size: 0.9rem;
     }
 }
