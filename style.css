@@ -127,18 +127,9 @@ h1, h2, h3, h4 {
     z-index: 0;
 }
 
-/* Gradient overlay for readability */
+/* Gradient overlay for readability â€” CHANGE 2: removed dark overlay so video plays unobstructed */
 #banner::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(10, 10, 18, 0.55) 0%,
-        rgba(10, 10, 18, 0.45) 50%,
-        rgba(10, 10, 18, 0.75) 100%
-    );
-    z-index: 1;
+    display: none;
 }
 
 /* Logo â€” top left */
@@ -151,6 +142,7 @@ h1, h2, h3, h4 {
     z-index: 10;
     filter: brightness(0) invert(1);
     opacity: 0.9;
+    display: none; /* CHANGE 1: logo hidden */
 }
 
 /* Hero text block */
@@ -550,7 +542,7 @@ h1, h2, h3, h4 {
 /* Styled text fallback when no img present */
 #feature .features-img:not(:has(img)) {
     font-size: 0.8rem;
-    color: rgba(237, 234, 222, 0.2);
+    color: #ffffff; /* CHANGE 3: social proof text set to white */
     letter-spacing: 0.05em;
     text-align: center;
     padding: 40px;
@@ -989,6 +981,7 @@ body > footer[style] {
         height: 40px;
         top: 20px;
         left: 20px;
+        display: none; /* CHANGE 1: logo hidden (mobile) */
     }
 
     .banner-text h1 {
