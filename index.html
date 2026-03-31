@@ -1225,6 +1225,28 @@
             <p>Serving barbers Nationwide <i class="fa fa-phone"></i></p>
         </div>
     </div>
+    <a href="https://wa.me/441234567890" class="whatsapp-float" target="_blank">
+    <i class="fa fa-whatsapp"></i>
+    <span>Chat with us</span>
+</a>
+
+<script>
+function sendWhatsApp() {
+    const phoneNumber = "441234567890"; // CHANGE THIS
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const consent = document.getElementById('consent').checked;
+
+    if(!name || !email || !consent) {
+        alert("Please fill all fields and agree to consent.");
+        return;
+    }
+
+    const message = `Hi! I'm interested in the Barber Growth System for ${name}. Email: ${email}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+}
+</script>
+
     <div class="social-links">
         <i class="fa fa-facebook"></i>
         <i class="fa fa-instagram"></i>
